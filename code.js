@@ -24,8 +24,6 @@ const animate = () => {
   })
 }
 
-animate();
-
 const enchant = async () => {
   await animate();
   total++;
