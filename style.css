@@ -30,7 +30,7 @@ html, body {
   left: 25vh;
 }
 
-#cancel {
+#vip {
   position: absolute;
   top: 69vh;
   right: 24.8vh;
@@ -82,4 +82,22 @@ html, body {
   color: #c6ad3a;
   text-shadow: inset1px 1px 2px rgb(0, 0, 0);
   font-weight: 500;
+}
+
+.value {
+  display: inline-block;
+
+}
+
+.pulse {
+  animation: pulse 0.5s ease-in-out alternate;
+}
+
+@keyframes pulse {
+  0% { 
+    transform: scale(1);
+    color: #f49222c2;
+  }
+  50% { transform: scale(1.5); }
+  100% { transform: scale(1); }
 }
