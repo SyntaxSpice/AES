@@ -5,6 +5,9 @@ html, body {
   text-align: center;
   color: #a2a2a2;
   text-shadow: #24221c;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 #main-image {
@@ -55,7 +58,7 @@ html, body {
 
 #active-bar {
   position: absolute;
-  width: 10%;
+  width: 0%;
   height: 3.5px;
   background-color: #f4aa22;
   border-radius: 2px;

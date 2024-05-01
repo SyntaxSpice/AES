@@ -1,5 +1,6 @@
 let total = 0;
 let current = 0;
+let disabled = false;
 console.log(1);
 const bar = document.getElementById('active-bar');
 const cVal = document.getElementById('c-value');
@@ -25,6 +26,8 @@ const animate = () => {
 }
 
 const enchant = async () => {
+  if(disabled) return;
+  disabled = true;
   await animate();
   total++;
   if(current < 3) {
@@ -34,6 +37,7 @@ const enchant = async () => {
   }
   cVal.innerHTML = current;
   tVal.innerHTML = total;
+  disabled = false;
 }
 
 startBtn.addEventListener('click', enchant)
