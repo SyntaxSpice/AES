@@ -30,10 +30,16 @@ html, body {
   left: 25vh;
 }
 
-#vip {
+#auto10 {
   position: absolute;
   top: 69vh;
   right: 24.8vh;
+}
+
+#auto16 {
+  position: absolute;
+  top: 69vh;
+  right: 6.8vh;
 }
 
 .btn {

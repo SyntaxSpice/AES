@@ -8,7 +8,8 @@ const cVal = document.getElementById('c-value');
 const tVal = document.getElementById('t-value');
 const bVal = document.getElementById('b-value');
 const startBtn = document.getElementById('start');
-const vipBtn = document.getElementById('vip');
+const vipBtn = document.getElementById('auto10');
+const vipBtn16 = document.getElementById('auto16');
 
 const animate = () => {
   return new Promise((resolve) => {
@@ -57,8 +58,63 @@ const enchant = async (chance) => {
   disabled = false;
 }
 
+const auto10 = () => {
+  let c = current;
+
+  const i = setInterval(() => {
+    if (c < 3) {
+      c++
+    } else {
+      c = Math.random() > (1 - 40 / 100) ? c + 1 : 0;
+    }
+
+    total++;
+
+    current = c;
+
+    if (current > best) {
+      best = current;
+    }
+
+    cVal.innerHTML = current;
+    tVal.innerHTML = total;
+    bVal.innerHTML = current;
+
+    if (current === 10) {
+      clearInterval(i);
+    }
+  }, 10)
+
+  scaleAnim(cVal);
+  scaleAnim(bVal);
+}
+
+const auto16 = () => {
+  let c = current;
+
+  while (c < 16) {
+    if (c < 3) {
+      c++
+    } else {
+      c = Math.random() > (1 - 40 / 100) ? c + 1 : 0;
+    }
+
+    total++;
+  }
+
+  current = c;
+
+  cVal.innerHTML = current;
+  tVal.innerHTML = total;
+  bVal.innerHTML = current > best ? current : best;
+
+  scaleAnim(cVal);
+  scaleAnim(bVal);
+}
 
 
-startBtn.addEventListener('click', () => enchant(50))
-vipBtn.addEventListener('click', () => enchant(75))
+
+startBtn.addEventListener('click', () => enchant(40))
+vipBtn.addEventListener('click', auto10)
+vipBtn16.addEventListener('click', auto16)
 
