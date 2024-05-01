@@ -30,7 +30,7 @@ const animate = () => {
 
 const scaleAnim = (el) => {
   el.classList.add('pulse');
-  setTimeout(() => el.classList.remove('pulse'), 1000)
+  setTimeout(() => el.classList.remove('pulse'), 500)
 }
 
 const enchant = async (chance) => {
