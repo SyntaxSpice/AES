@@ -104,9 +104,11 @@ const auto16 = () => {
 
   current = c;
 
+  best = current > best ? current : best;
+
   cVal.innerHTML = current;
   tVal.innerHTML = total;
-  bVal.innerHTML = current > best ? current : best;
+  bVal.innerHTML = best;
 
   scaleAnim(cVal);
   scaleAnim(bVal);
