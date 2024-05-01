@@ -20,7 +20,7 @@ const animate = () => {
         return;
       }
 
-      state += 3;
+      state += 2;
       bar.style.width = `${state}%`;
       requestAnimationFrame(render)
     }
@@ -30,7 +30,7 @@ const animate = () => {
 
 const scaleAnim = (el) => {
   el.classList.add('pulse');
-  setTimeout(() => el.classList.remove('pulse'), 500)
+  setTimeout(() => el.classList.remove('pulse'), 1000)
 }
 
 const enchant = async (chance) => {
