@@ -19,7 +19,7 @@ const animate = () => {
         return;
       }
   
-      state += 1;
+      state += 3;
       bar.style.width = `${state}%`;
       requestAnimationFrame(render)
     }
